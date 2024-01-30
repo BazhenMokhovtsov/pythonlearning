@@ -1,0 +1,30 @@
+#created functions with a dictionary as an argument
+def image_info(image):
+    #check if there are parameters in the dictionary
+    if 'image_id'not in image or 'image_title' not in image:
+        #error output in the opposite case
+        raise TypeError("image_id or image_title not in image but must be present")
+    print(type(image))
+    return f"Image {image['image_title']} has id {image['image_id']}"
+
+#error handling
+try:
+    print(image_info({'image_title': 'My Cat', 'image_id': 123}))
+except TypeError as e:
+    print(e)
+else:
+    print('Code has no error')
+
+try:
+    print(image_info({'image_title': 'My Cat'}))
+except TypeError as e:
+    print(e)
+else:
+    print('Code has no error')
+
+try:
+    print(image_info({'image_id': 123}))
+except TypeError as e:
+    print(e)
+else:
+    print('Code has no error')
