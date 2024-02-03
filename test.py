@@ -1,0 +1,8 @@
+my_num = 25.1
+if my_num is not str:
+    print('is int' if isinstance(my_num,int) else 'is not int')
+
+my_img = (1920, 1080)
+
+print(f'{my_img[0]}x{my_img[1]}') if len(my_img) == 2 and all(isinstance(val, str) for val in my_img) \
+    else print("incorrect image formatting")
